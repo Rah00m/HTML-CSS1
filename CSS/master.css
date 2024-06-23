@@ -158,6 +158,12 @@ width: 100%;
     height: calc(100vh - 64px);
     position: relative;
 }
+@media (max-width: 767px) {
+    .landing {
+        background-size: auto; /* Adjust background size for mobile */
+        height: 100vh; /* Full viewport height on mobile */
+    }
+}
 .landing .intro-text{
     position: absolute;
     left: 50%;
