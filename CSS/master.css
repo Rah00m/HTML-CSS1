@@ -22,27 +22,28 @@ body {
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
-    /* Default width */
+    width: 100%;                    /* Default width */
 }
+
 
 /* Small */
 @media (min-width: 768px) {
     .container {
-        width: 750px; /* Adjusted width for small screens */
+    width: 750px;
     }
 }
 
 /* Medium */
 @media (min-width: 992px) {
     .container {
-        width: 970px; /* Adjusted width for medium screens */
+    width: 970px;
     }
 }
 
 /* Large */
 @media (min-width: 1200px) {
     .container {
-        width: 1170px; /* Adjusted width for large screens */
+    width: 1170px;
     }
 }
 /* End global rules */
@@ -62,12 +63,12 @@ margin: 0;
 }
 @media (max-width: 767px) {
     .special-heading {
-      font-size: 60px;
+    font-size: 60px;
     }
     .special-heading + p {
-      margin-top: -20px;
+    margin-top: -20px;
     }
-  }
+}
 /* Start header */
 .header {
     padding: 20px; /* Padding for the header */
@@ -158,6 +159,12 @@ width: 100%;
     height: calc(100vh - 64px);
     position: relative;
 }
+@media (max-width: 767px) {
+    .landing {
+        background-size: auto; /* Adjust background size for mobile */
+        height: 100vh; /* Full viewport height on mobile */
+    }
+}
 .landing .intro-text{
     position: absolute;
     left: 50%;
@@ -184,75 +191,101 @@ width: 100%;
 .features {
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color:#FFE6E6  /* Ensure --main-color is defined */
+    background-color:#FFE6E6  
 }
 
 .features .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted property */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
 }
- .features .feat {
+        
+.features .feat {
     padding: 20px;
     text-align: center;
- }
- .features .feat i {
+}
+.features .feat i {
     color: var(--main-color);
- }
- .features .feat h3 {
-    font-weight: 80px;
-    margin: 30px;
- }
- .features .feat p {
-  line-height: 1.8;
-  color: #968a8a;
-  font-size: 17px;
- }
+}
+.features .feat h3 {
+    font-weight: 800;
+    margin: 30px 0;
+}
+.features .feat p {
+line-height: 1.8;
+color: #968a8a;
+font-size: 17px;
+}
 
 /*End features*/
 /* start services */
 .services {
-    padding-top:60px ;
+    padding-top: 60px;
     padding-bottom: 60px;
 }
-.services .services_content {
-    display :grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted property */
+@media (max-width: 767px) {
+.features,
+.services {
+    display: grid;
+    grid-template-columns: 1fr; /* Display as a single column */
+    grid-gap: 20px;
+}
+
+.features .feat,
+.services .srv {
+    padding: 20px;
+    text-align: center;
+}
+
+.features .feat h3,
+.services .srv .text h3 {
+    font-size: 24px; /* Adjust font size for headings */
+    margin: 20px 0;
+}
+
+.services .services-content .image::before {
+    display: none; /* Hide the pseudo-element on services section */
+}
+}
+
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 30px;
     margin-top: 100px;
 }
-.services .services_content .srv {
+.services .services-content .srv {
     display: flex;
     margin-bottom: 40px;
 }
 @media (max-width: 767px) {
     .services .services-content .srv {
-flex-direction: column;
-text-align: center;
+        flex-direction: column;
+    text-align: center;
     }
 }
-.services .services_content .srv i {
+
+.services .services-content .srv i {
     color: var(--main-color);
     flex-basis: 60px;
 }
-.services .services_content .srv .text{
+.services .services-content .srv .text {
     flex: 1;
 }
-.services .services_content .srv .text h3 {
-    margin:0 0 20px;
+.services .services-content .srv .text h3 {
+    margin: 0 0 20px;
 }
-.services .services_content .srv .text p {
+.services .services-content .srv .text p {
     color: #555;
     font-weight: 300;
     line-height: 1.6;
 }
-.services .services_content .image {
+.services .services-content .image {
     text-align: center;
     position: relative;
 }
-
-.services .services_content .image::before {
-    content: " ";
+.services .services-content .image::before {
+    content: "";
     background-color: var(--secondary-color);
     width: 100px;
     height: calc(100% + 100px);
@@ -260,9 +293,12 @@ text-align: center;
     position: absolute;
     right: 0;
     z-index: -1;
-} 
+}
+.services .services-content .image img {
+    width: 260px;
+}
 @media (max-width: 1199px) {
-    .image-col { 
+    .image-col {
         display: none;
     }
 }
@@ -276,7 +312,7 @@ text-align: center;
 }
 .portfolio .portfolio_content {
     display :grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted property */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Adjusted property */
     grid-gap: 30px;
     margin-top: 100px;
     background-color: #FFE6E6 /* Ensure --main-color is defined */;
@@ -302,6 +338,9 @@ text-align: center;
     color: #555;
     text-align: center;
 }
+@media (max-width: 991px){
+
+}
 /* End portfolio */
 /* Start about  */
 .about {
@@ -316,10 +355,10 @@ text-align: center;
 }
 @media (max-width: 991px) {
     .about .about-content {
-      flex-direction: column;
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
-  }
+}
 .about .about-content .image {
     position: relative;
     width: 350px;
@@ -328,9 +367,9 @@ text-align: center;
 /* more practice  */
 @media (max-width: 991px) {  
     .about .about-content .image {
-      margin: 0 auto 60px;
+        margin: 0 auto 60px;
     }
-  }
+}
 .about .about-content .image img{
     max-width: 100%;
 }
@@ -359,9 +398,9 @@ text-align: center;
 @media (max-width: 991px) {
     .about .about-content .image::before,
     .about .about-content .image::after {
-      display: none;
+        display: none;
     }
-  }
+}
 .about .about-content .text {
 flex-basis: calc(100% - 500px);
 
